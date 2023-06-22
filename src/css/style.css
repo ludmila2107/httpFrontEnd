@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica', Arial, sans-serif;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+*:focus-visible {
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  padding: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-add-ticket,
+.modal__cancel-btn,
+.modal__ok-btn {
+  padding: 15px 30px;
+  margin-left: auto;  
+  font-size: 1.1rem;
+  background: none;
+  border: 1px solid #000;
+  border-radius: 17px;
+  cursor: pointer;
+}
+
+.tickets-list {  
+  margin: 20px 0;
+}
+
+.tickets-list__item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px; 
+  font-size: 1.1rem;
+  border: 1px solid #000;
+}
+
+.tickets-list__item:not(:first-child) {
+  border-top: none;
+}
+
+.tickets-list__item-status {
+  position: relative;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.tickets-list__item-status::after {
+  position: absolute;
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -10px;
+  left: -10px;
+  width: 30px;
+  height: 30px;
+  font-size: 1.1rem;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.tickets-list__item-status:checked::after {
+  content: '\2714';
+}
+
+.tickets-list__item-name {
+  flex-grow: 1;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.tickets-list__item-created {
+  margin-right: 40px;
+}
+
+.tickets-list__item-edit-btn {
+  font-size: 1rem;
+  line-height: 0;
+}
+
+.tickets-list__item-edit-btn, 
+.tickets-list__item-delete-btn {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.tickets-list__item-description {
+  width: 100%;
+  margin: 15px 300px 15px 45px;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column; 
+  min-width: 500px;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  font-size: 1rem;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.modal__title {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.modal__label {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.modal__input_short,
+.modal__textarea_full {
+  min-height: 40px;
+  margin-bottom: 20px;
+  padding: 0 5px;
+  font-size: 1.1rem;
+}
+
+.modal__textarea_full {
+  height: 60px;
+  resize: none;
+}
+
+.modal__text {
+  margin-bottom: 20px;
+}
+
+.wrap-btns {
+  margin-left: auto;
+}
+
+.modal__ok-btn {
+  margin-left: 15px;
+}
+
